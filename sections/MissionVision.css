@@ -1,0 +1,74 @@
+.mvv {
+  display: grid;
+  gap: 20px;
+}
+
+.mvv__item {
+  position: relative;
+  padding: 32px 28px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.mvv__item::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 28px;
+  width: 40px;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+  background: var(--blue);
+}
+
+.mvv__icon {
+  width: 24px;
+  height: 24px;
+  color: var(--blue);
+  stroke-width: 1.75;
+}
+
+.mvv__item h3 {
+  margin: 20px 0 12px;
+  font-size: 1.15rem;
+}
+
+.mvv__item p {
+  color: var(--muted);
+}
+
+.mvv__values {
+  display: grid;
+  gap: 10px;
+}
+
+.mvv__values li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+}
+
+.mvv__values svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--cyan);
+  stroke-width: 2.5;
+}
+
+@media (min-width: 900px) {
+  .mvv {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .mvv__item {
+    padding: 36px 32px;
+  }
+
+  .mvv__item::before {
+    left: 32px;
+  }
+}

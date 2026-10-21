@@ -1,0 +1,106 @@
+.process {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 50% 60% at 100% 0%, rgba(209, 250, 229, 0.18), transparent 70%),
+    var(--navy);
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 36px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Linha vertical (mobile) */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--cyan), rgba(209, 250, 229, 0.35));
+}
+
+.timeline__step {
+  position: relative;
+  padding-left: 48px;
+}
+
+/* Nó inspirado nos pontos de conexão do símbolo */
+.timeline__node {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 0 0 6px var(--navy);
+}
+
+.timeline__node::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+.timeline__num {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--cyan);
+  font-variant-numeric: tabular-nums;
+  line-height: 22px;
+}
+
+.timeline__step h3 {
+  margin: 10px 0 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.timeline__step p {
+  max-width: 320px;
+  font-size: 0.95rem;
+  color: var(--on-dark);
+}
+
+@media (min-width: 900px) {
+  .timeline {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  /* Linha horizontal (desktop) */
+  .timeline::before {
+    top: 10px;
+    bottom: auto;
+    left: 11px;
+    right: 0;
+    width: auto;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cyan), rgba(209, 250, 229, 0.35) 85%, transparent);
+  }
+
+  .timeline__step {
+    padding-left: 0;
+    padding-top: 44px;
+  }
+
+  .timeline__num {
+    line-height: 1.4;
+  }
+
+  .timeline__step h3 {
+    margin-top: 8px;
+  }
+}
