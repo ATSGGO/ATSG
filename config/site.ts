@@ -35,16 +35,28 @@ export type TeamMember = {
   name?: string;
   /** Caminho da foto (ex.: '/team/nome.jpg' dentro de /public). Opcional. */
   photo?: string;
+  /** Ajuste vertical do recorte para posicionar o rosto na foto. */
+  photoPosition?: string;
 };
 
 /** Para adicionar integrantes, basta incluir novos itens nesta lista. */
 export const TEAM: TeamMember[] = [
-  { name: 'Samuel', role: 'Gerente de Projetos / Scrum Master' },
-  { name: 'Emanuel', role: 'Líder Técnico / Especialista de Execução' },
-  { name: 'José', role: 'Analista de Qualidade (QA) e Normas' },
-  { name: 'Ian', role: 'Analista de Documentação e Compliance' },
-  { name: 'Vargas', role: 'Design' },
-  { name: 'João', role: 'Auxiliar de Gestão' },
+  {
+    name: 'Samuel',
+    role: 'Gerente de Projetos / Scrum Master',
+    photo: '/team/samuel.jpeg',
+    photoPosition: 'center 20%',
+  },
+  {
+    name: 'Emanuel',
+    role: 'Líder Técnico / Especialista de Execução',
+    photo: '/team/emanuel.jpeg',
+    photoPosition: 'center 20%',
+  },
+  { name: 'José', role: 'Analista de Qualidade (QA) e Normas', photo: '/team/jose.jpeg' },
+  { name: 'Ian', role: 'Analista de Documentação e Compliance', photo: '/team/ian.jpeg' },
+  { name: 'Vargas', role: 'Design', photo: '/team/vargas.jpeg', photoPosition: 'center 20%' },
+  { name: 'João', role: 'Auxiliar de Gestão', photo: '/team/joao.jpeg' },
 ];
 
 /** Responsabilidade compartilhada por todos os integrantes. */

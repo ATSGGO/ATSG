@@ -22,7 +22,14 @@ export function Team() {
               <Reveal as="li" key={member.role} delay={(i % 3) * 80} className="member">
                 <div className="member__avatar" aria-hidden={member.photo ? undefined : true}>
                   {member.photo ? (
-                    <img src={member.photo} alt={name} width={96} height={96} loading="lazy" />
+                    <img
+                      src={member.photo}
+                      alt={name}
+                      width={96}
+                      height={96}
+                      loading="lazy"
+                      style={{ objectPosition: member.photoPosition }}
+                    />
                   ) : (
                     <span>{member.name ? member.name.charAt(0) : '?'}</span>
                   )}

@@ -14,7 +14,7 @@
   --on-dark-muted: #c3e2d1;
   --line-dark: rgba(255, 255, 255, 0.22);
 
-  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
 
   --container: 1200px;
   --gutter: clamp(16px, 4vw, 32px);

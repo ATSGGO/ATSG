@@ -1,6 +1,5 @@
 import { ArrowRight, Cloud, Monitor, Settings2 } from 'lucide-react';
 import logo from '../assets/Logótipo ATSG com símbolo A esmeralda (1).png';
-import { Reveal } from '../components/Reveal';
 import './Hero.css';
 
 const PILLARS = [
@@ -25,22 +24,22 @@ export function Hero() {
     <section id="inicio" className="hero" aria-labelledby="hero-title">
       <div className="container hero__inner">
         <div className="hero__content">
-          <Reveal as="p" className="hero__eyebrow">
+          <p className="hero__eyebrow">
             ATSG
-          </Reveal>
+          </p>
 
-          <Reveal as="h1" delay={80} className="hero__title">
+          <h1 className="hero__title">
             <span id="hero-title">
               <span>Tecnologia que</span> <strong>impulsiona</strong> <span>o seu negócio</span>
             </span>
-          </Reveal>
+          </h1>
 
-          <Reveal as="p" delay={160} className="hero__text">
+          <p className="hero__text">
             Desenvolvemos soluções digitais, sistemas e experiências tecnológicas pensadas para transformar
             necessidades em resultados.
-          </Reveal>
+          </p>
 
-          <Reveal delay={240} className="hero__actions">
+          <div className="hero__actions">
             <a href="#solucoes" className="btn btn--primary">
               Conheça nossas soluções
               <ArrowRight aria-hidden="true" />
@@ -48,19 +47,19 @@ export function Hero() {
             <a href="#contato" className="btn btn--ghost-light">
               Fale com a equipe
             </a>
-          </Reveal>
+          </div>
 
-          <Reveal delay={320} as="ul" className="hero__pillars">
+          <ul className="hero__pillars">
             {PILLARS.map(({ icon: Icon, label }) => (
               <li key={label}>
                 <Icon aria-hidden="true" />
                 {label}
               </li>
             ))}
-          </Reveal>
+          </ul>
         </div>
 
-        <Reveal delay={200} className="hero__visual">
+        <div className="hero__visual">
           <svg className="hero__traces" viewBox="0 0 560 520" aria-hidden="true">
             {TRACES.map((t) => (
               <g key={t.d}>
@@ -70,9 +69,9 @@ export function Hero() {
             ))}
           </svg>
           <div className="hero__tile">
-            <img src={logo} alt="ATSG" width={2000} height={500} />
+            <img src={logo} alt="ATSG" width={640} height={213} decoding="async" />
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );
